@@ -82,12 +82,10 @@ function TaxCalculate({ apiData, formData }) {
     
     
     function calculateHECS(taxdata, formdata) {
-        const hasHECS = true;
-        const hecsBalance = 60000;
         console.log("Function: calculateHECS");
     
         try {
-            if (hasHECS) {
+            if (formData.isHECS) {
                 const { brackets } = taxdata
                 if (!brackets) {
                     throw new Error(`calculateHECS: The API has no data for the year: ${formdata.year}`);
@@ -95,7 +93,7 @@ function TaxCalculate({ apiData, formData }) {
                 for (const {range, rate} of brackets) {
                     if (formdata.income >= range[0] && formdata.income <= range[1]) {
                         const result = formdata.income * rate;
-                        return Math.min(result, hecsBalance).toFixed(2);    // If hecs debt is lower than the repayment, return the hecs debt amount
+                        return Math.min(result, formData.amtHECS).toFixed(2);    // If hecs debt is lower than the repayment, return the hecs debt amount
                     };
                 };
             };
