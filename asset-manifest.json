@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ReactTaxCalcPresentation/static/css/main.0a66d48d.css",
-    "main.js": "/ReactTaxCalcPresentation/static/js/main.68e13bf0.js",
+    "main.css": "/ReactTaxCalcPresentation/static/css/main.11d73dbc.css",
+    "main.js": "/ReactTaxCalcPresentation/static/js/main.87dade19.js",
     "static/js/787.836c7b77.chunk.js": "/ReactTaxCalcPresentation/static/js/787.836c7b77.chunk.js",
     "index.html": "/ReactTaxCalcPresentation/index.html",
-    "main.0a66d48d.css.map": "/ReactTaxCalcPresentation/static/css/main.0a66d48d.css.map",
-    "main.68e13bf0.js.map": "/ReactTaxCalcPresentation/static/js/main.68e13bf0.js.map",
+    "main.11d73dbc.css.map": "/ReactTaxCalcPresentation/static/css/main.11d73dbc.css.map",
+    "main.87dade19.js.map": "/ReactTaxCalcPresentation/static/js/main.87dade19.js.map",
     "787.836c7b77.chunk.js.map": "/ReactTaxCalcPresentation/static/js/787.836c7b77.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a66d48d.css",
-    "static/js/main.68e13bf0.js"
+    "static/css/main.11d73dbc.css",
+    "static/js/main.87dade19.js"
   ]
 }
