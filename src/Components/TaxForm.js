@@ -11,6 +11,7 @@ function TaxForm(props) {
     const [hasHECSDebt, setHasHECSDebt] = useState(false);
     const [hecsDebtAmount, setHECSDebtAmount] = useState('');
     const [hasPrivateHealth, setHasPrivateHealth] = useState(false);
+    const [isSpinning, setIsSpinning] = useState(false);
 
 
     function isNumber(ev) {
@@ -65,11 +66,11 @@ function TaxForm(props) {
         };
     };
 
-    const setHasSpouse_handle = (ev) => {
-        ev.preventDefault();
-        if (!ev.target.checked) {setSpousesIncome('');} // if the "do you have spouse" box is unticked, set the spouse income to nothing
-        setHasSpouse(!hasSpouse);
-    };
+    // const setHasSpouse_handle = (ev) => {
+    //     ev.preventDefault();
+    //     if (!ev.target.checked) {setSpousesIncome('');} // if the "do you have spouse" box is unticked, set the spouse income to nothing
+    //     setHasSpouse(!hasSpouse);
+    // };
 
     const setSpousesIncome_handle = (ev) => {
         ev.preventDefault()
@@ -96,11 +97,12 @@ function TaxForm(props) {
         };
     };
 
-    const setHasHECSDebt_handle = (ev) => {
-        ev.preventDefault();
-        if (!ev.target.checked) {setHECSDebtAmount('');} ;   // if the "do you have a hecs debt" box is unticked, set the hecs debt to nothing
-        setHasHECSDebt(!hasHECSDebt);
-    };
+    // const setHasHECSDebt_handle = (ev) => {
+    //     ev.preventDefault();
+    //     setHasHECSDebt(!hasHECSDebt);
+    //     // if (!ev.target.checked) {setHECSDebtAmount('');} ;   // if the "do you have a hecs debt" box is unticked, set the hecs debt to nothing
+    // };
+
 
     const setHECSDebtAmount_handle = (ev) => {
         ev.preventDefault()
@@ -115,11 +117,26 @@ function TaxForm(props) {
     };
 
 
-    const setHasPrivateHealth_handle = (ev) => {
-        ev.preventDefault();
-        setHasPrivateHealth(!hasPrivateHealth);
-    };
+    // const setHasPrivateHealth_handle = (ev) => {
+    //     ev.preventDefault();
+    //     setHasPrivateHealth(!hasPrivateHealth);
+    // };
     
+
+    const handleSpinButtonClick = (ev) => {
+        ev.preventDefault();
+        setIsSpinning(!isSpinning);
+
+        const elementsToSpin = document.querySelectorAll('.form-line');
+        const elementsToSpinButtons = document.querySelectorAll('button');
+
+        elementsToSpin.forEach((element) => {
+            element.classList.toggle('spin');
+        });
+        elementsToSpinButtons.forEach((element) => {
+            element.classList.toggle('spin');
+        });
+    };
  
     const handleSubmit = (ev) => {
         ev.preventDefault();
@@ -208,7 +225,7 @@ function TaxForm(props) {
                 type="checkbox"
                 id="hasSpouse"
                 value={hasSpouse}
-                onChange={(e) => setHasSpouse_handle(e)}
+                onChange={(e) => setHasSpouse(!hasSpouse)}
             />
         </div>
 
@@ -245,7 +262,7 @@ function TaxForm(props) {
                 type="checkbox"
                 id="hasHECSDebt"
                 checked={hasHECSDebt}
-                onChange={(e) => setHasHECSDebt_handle(e)}
+                onChange={(e) => setHasHECSDebt(!hasHECSDebt)}
             />
         </div>
 
@@ -271,9 +288,12 @@ function TaxForm(props) {
                 type="checkbox"
                 id="hasPrivateHealth"
                 checked={hasPrivateHealth}
-                onChange={(e) => setHasPrivateHealth_handle(e)}
+                onChange={(e) => setHasPrivateHealth(!hasPrivateHealth)}
             />
         </div>
+
+        {/* SpinButton */}        
+        <button onClick={handleSpinButtonClick}>???</button>
 
 
         {/* Form submit button */}

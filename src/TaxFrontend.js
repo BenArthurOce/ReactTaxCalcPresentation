@@ -33,11 +33,6 @@ function TaxFrontend() {
         setWaitingFlag(true) 
     }
 
-    const triggerDebug = () => {
-        console.log("debug") 
-    }
-
-    
 
     return (
         <div id="wrapper">
@@ -45,7 +40,6 @@ function TaxFrontend() {
                 <TaxForm onFormSubmit={triggerFormSubmitted}
                 />
                  <button onClick={triggerFormReset}>Reset</button> 
-                 <button onClick={triggerDebug}>Debug</button> 
             </section>
 
 
