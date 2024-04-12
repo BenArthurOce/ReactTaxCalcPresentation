@@ -25,8 +25,8 @@ function TaxRequest({ formData }) {
         .then((jsonData) => {
             try {
                 const APIHeaders = [            // List of tax categories (Main "branches" for the JSON file)
-                      "Individual Income Tax"
-                    , "HECS Repayment Rates"
+                      "Individual Income Tax (Resident)"
+                    , "Higher Education Loan Program (HELP) Repayments"
                     , "Low Income Tax Offset"
                     , "Low Middle Income Tax Offset"
                     , "Medicare Levy Reduction"
